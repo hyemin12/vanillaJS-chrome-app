@@ -83,3 +83,54 @@ function onLoginSubmit(event) {
 | 매개변수                  | 전달인자(인자)         |
 | 함수와 메서드 입력 변수명 | 함수와 메서드의 입력값 |
 | Variable                  | Value                  |
+
+## username 가져오기
+
+```js
+// app.js
+
+const loginForm = document.querySelector("#login-form");
+const loginInput = document.querySelector("#login-form input");
+const greeting = document.querySelector("#greeting");
+
+const HIDDEN_CLASSNAME = "hidden";
+
+function onLoginSubmit(event) {
+  event.preventDefault();
+  loginForm.classList.add(HIDDEN_CLASSNAME);
+  const username = loginInput.value;
+  greeting.innerText = `Hello ${username}`;
+  greeting.classList.remove(HIDDEN_CLASSNAME);
+}
+
+loginForm.addEventListener("submit", onLoginSubmit);
+```
+
+- string + 변수 작성법
+
+```js
+const 방법1 = "string " + 변수명;
+const 방법2 = `string ${변수명}`;
+// 방법2는 `` backtick 기호 안에 작성해야함
+```
+
+- HIDDEN_CLASSNAME 대문자로 작성한 이유  
+  string만 포함된 정보는 대문자로 작성하기도 함  
+  중요한 데이터 X
+
+## localStorage
+
+https://developer.mozilla.org/ko/docs/Web/API/Window/localStorage
+
+문법
+
+```js
+// 저장하기
+localStorage.setItem("key", value);
+
+// 지우기
+localStorage.removeItem("key");
+
+// 확인하기
+localStorage.getItem("key");
+```
