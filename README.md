@@ -487,3 +487,54 @@ function handleToDoSubmit(event) {
 
 > .parseInt : 문자열을 숫자로 변경  
 > id = number고, li.id는 문자이기 때문에 parseInt로 변환해야함
+
+# 날씨 정보 가져오기
+
+## | 현재 위치 정보
+
+.getCurrentPosition 활용
+
+```js
+navigator.geolocation.getCurrentPosition(성공했을때 함수, 에러났을때 함수);
+```
+
+### 위도 경도 구하기
+
+```js
+function onGeoOk(position) {
+  // 위도 경도 구하기
+  // coords <- 좌표
+  let lat = position.coords.latitude;
+  let lng = position.coords.longitude;
+  console.log(position, lat, lng);
+}
+```
+
+## openweathermap API
+
+위치를 기반으로 날씨정보를 가져오는 API
+
+https://openweathermap.org/current
+
+| 정보         | 명령어                  |
+| ------------ | ----------------------- |
+| 현재온도     | .main.temp - 273.15     |
+| 현재 습도    | .main.humidity          |
+| 상세날씨설명 | .weather[0].description |
+| 날씨 이미지  | .weather[0].icon        |
+| 바람         | .wind.speed             |
+| 구름         | .clouds.all + "%"       |
+| 나라         | .sys.country            |
+| 도시         | .name                   |
+
+```js
+const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`;
+fetch(url)
+  .then((response) => response.json())
+  .then((data) => {
+    const weather = document.querySelector("#weather .weather");
+    const city = document.querySelector("#weather .city");
+    city.innerText = `${data.weather[0].main} / ${data.main.temp}`;
+    weather.innerText = data.name;
+  });
+```

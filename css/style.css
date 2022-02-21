@@ -1,3 +1,155 @@
+/* common */
+body {
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+h1,
+h2,
+h3,
+h4,
+h4,
+h5,
+h6,
+p,
+i,
+span,
+div,
+ul,
+li input {
+  font-family: "Montserrat", sans-serif;
+}
 .hidden {
   display: none;
+}
+@font-face {
+  font-family: "GmarketSansMedium";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* login-form */
+#login-form h1 {
+  color: #fff;
+}
+#login-form input {
+  width: 100%;
+  background: transparent;
+  padding: 5px;
+  font-size: 24px;
+  color: #fff;
+  text-align: center;
+  font-weight: 700;
+  border: none;
+  border-bottom: 2px solid #fff;
+}
+#login-form input:focus {
+  outline: none;
+}
+
+/* greeting-wrapper */
+.greeting-wrapper {
+  justify-content: center;
+}
+#clock {
+  margin: 0px;
+  text-align: center;
+  font-size: 80px;
+  color: #fff;
+  letter-spacing: 5px;
+}
+#greeting {
+  margin: 0px;
+  margin-bottom: 60px;
+  color: #fff;
+  font-size: 36px;
+  text-align: center;
+}
+/* todo-form */
+#todo-form h4 {
+  margin: 0;
+  color: #fff;
+  font-size: 24px;
+  text-align: center;
+  font-weight: 400;
+}
+#todo-form input {
+  width: 100;
+  background: transparent;
+  padding: 10px 0;
+  color: #fff;
+  font-size: 24px;
+  text-align: center;
+  font-weight: 400;
+  border: none;
+  border-bottom: 2px solid #fff;
+}
+#todo-form input:focus {
+  outline: none;
+}
+.todo-list {
+  padding: 0;
+}
+.todo-list li {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  padding: 5px 10px;
+  color: #fff;
+}
+.todo-list li span {
+  font-family: "GmarketSansMedium";
+  font-weight: 300;
+}
+.todo-list i {
+  font-style: normal;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+#weather {
+  position: absolute;
+  right: 50px;
+  top: 50px;
+}
+#weather span {
+  display: block;
+  color: #fff;
+}
+.weather-wrapper {
+  display: flex;
+  align-items: center;
+}
+.weather-wrapper img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.city {
+  text-align: center;
+}
+
+#quote {
+  position: absolute;
+  bottom: 20px;
+}
+#quote span {
+  display: block;
+  color: #eee;
+  text-align: center;
+  font-size: 12px;
+  font-family: "GmarketSansMedium";
+}
+#quote span:first-child {
+  font-size: 14px;
 }
