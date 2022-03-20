@@ -1,5 +1,7 @@
 /* common */
 body {
+  width: 100vw;
+  height: 100vh;
   margin: 0;
   padding: 0;
   position: relative;
@@ -38,6 +40,9 @@ li input {
 }
 
 /* login-form */
+#login-form {
+  padding: 0 30px;
+}
 #login-form h1 {
   color: #fff;
   text-align: center;
@@ -119,8 +124,8 @@ li input {
 
 #weather {
   position: absolute;
-  right: 50px;
-  top: 50px;
+  right: 30px;
+  top: 30px;
 }
 #weather span {
   display: block;
