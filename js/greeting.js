@@ -5,6 +5,19 @@ const greetingWrapper = document.querySelector(".greeting-wrapper");
 
 const HIDDEN_CLASSNAME = "hidden";
 const USERNAME_KEY = "username";
+const h = new Date().getHours();
+let greetingText = "";
+
+switch (h) {
+  case h < 12:
+    greetingText = "Good Morning";
+  case h >= 12 && h <= 16:
+    greetingText = "Good Afternoon";
+  case h > 21:
+    greetingText = "Good Night";
+  default:
+    greetingText = "Hello";
+}
 
 function onLoginSubmit(event) {
   event.preventDefault();
@@ -14,7 +27,7 @@ function onLoginSubmit(event) {
   paintGreetings(username);
 }
 function paintGreetings(username) {
-  greeting.innerText = `Hello, ${username}`;
+  greeting.innerText = `${greetingText}, ${username}`;
   greetingWrapper.classList.remove(HIDDEN_CLASSNAME);
 }
 
