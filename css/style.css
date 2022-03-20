@@ -40,6 +40,7 @@ li input {
 /* login-form */
 #login-form h1 {
   color: #fff;
+  text-align: center;
 }
 #login-form input {
   width: 100%;
@@ -145,6 +146,7 @@ li input {
 }
 #quote span {
   display: block;
+  padding: 10px 20px;
   color: #eee;
   text-align: center;
   font-size: 12px;
